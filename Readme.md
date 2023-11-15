@@ -65,9 +65,12 @@ dim = [[1, 2, 3, 4, 0],
        [5, 6, 7, 8, 9]]
 
 # Dictionary
-{
-
+dictionary = {
+    0: "Yeagerist",
+    1: "Espada",
+    2: "Kaizoku",
 }
+dictionary[0]
 
 # Variable Declarations
 name = "Radiance Babajide"
@@ -82,11 +85,19 @@ const{
 
 
 # Interfaces
-interface Name{name: string}
-interface Address{
-    name: Name
-    hash: hex
+interface Address{address: hex}
+interface Account{
+    name: string
+    wallet_address: Address
+    public_key: oct
 }
+
+my_account = Account{
+    name: "Akagami"
+    wallet_address: Address{0x308d3ef2e87f72f7d23e6de6}
+    public_key: 0o123234342342342342334327
+}
+print(my_account.public_key)
 
 
 # Control flow
@@ -101,10 +112,9 @@ if x >= 32{
 
 # # Match | Switch Statements
 match x {
-    case 2{}
+    case MAX_SCORE{}
     else{}
-    then{}
-}
+}then{}
 
 # Loops
 for x in range(1){

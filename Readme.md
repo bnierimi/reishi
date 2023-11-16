@@ -91,6 +91,9 @@ interface Account{
     wallet_address: Address
     public_key: oct
 }
+* interface Point{
+    x, y: int
+}
 
 my_account = Account{
     name: "Akagami"
@@ -150,4 +153,12 @@ def like(id: hex, *args, **kwargs) -> bool{
 class BornAgain(Object){
     def __init__(name) -> None{}
 }
+
+
+# Package | Module
+import stdio as io
+import "bnierimi/reiatsu" as reiatsu
+from math import factorial as fact
+from "https://github.com/bnierimi/reiatsu" import pressure as ps
+# fetch pressure from "https://github.com/bnierimi/reiatsu" as reiatsu
 ```

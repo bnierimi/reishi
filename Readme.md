@@ -1,8 +1,9 @@
 ## t/Reishi
 [_yours bnierimi_](https://bnierimi.vercel.app)
+License: ...
 
 
-### Sample
+### Sample code
 ```py
 # Types
 integer, float, bytes

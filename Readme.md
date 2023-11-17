@@ -66,6 +66,8 @@ enums Fruits{
 # Seq Types
 # List
 [1, 2, True, "Room"]
+basket: string[] = ["Berry", "Mango", "Apple"]
+basket: <string | boolean>[3] = ["Berries", True, "Onions"]
 
 * # # Tuple
 # ()
@@ -74,7 +76,7 @@ enums Fruits{
 # # length, dimension|shape
 matrix: int[5, 1] = [[1, 2, 3, 4, 0]]
 dim = [[1, 2, 3, 4, 0],
-       [5, 6, 7, 8, 9]]
+       [5, 6, 7, 8, 9]] # shape == int[5, 2]
 
 # Dictionary
 dictionary = {
@@ -92,7 +94,7 @@ age: int = 20
 const YONKO = "tsurgeon"
 const MAX_SCORE: int = 100
 const{
-    NAKAMA = "Corazon"; YEARS: [int | float] = 2
+    NAKAMA = "Corazon"; YEARS: <int | float> = 2
 }
 ```
 
@@ -143,12 +145,26 @@ for x in 0..5{
 for i, x in [0, 10, 20, 30]{
     print(i, x)
 }
+
 * loop {
     x == 2: break | continue
 }
-while True {
-    break
+
+x = 0
+running = True
+while running {
+    break if x == 2
+    x += 1
 }
+
+r = 0
+while r < 10 {
+    print(r)
+}
+```
+
+```py
+break if x == 2 else print(False)
 ```
 
 ```py
@@ -168,8 +184,9 @@ def like(id: hex, *args, **kwargs) -> bool{
 class BornAgain(Object){
     def __init__(name) -> None{}
 }
+```
 
-
+```py
 # Package | Module
 import stdio as io
 import "bnierimi/reiatsu" as reiatsu

@@ -1,6 +1,9 @@
 ## t/Reishi
 [_yours bnierimi_](https://bnierimi.vercel.app)
-License: ...
+
+- Website: ...
+- Release: ...
+- License: ...
 
 
 ### Sample code
@@ -10,7 +13,9 @@ integer, float, bytes
 
 # String
 "This is a string"
+```
 
+```py
 # # Multi line | Docstring
 `this
 is for
@@ -19,9 +24,14 @@ docstring`
 if backtick ` not in 256 ASCII characters
     then this
 """
+```
 
+```py
 # Chars
 'f'
+
+# Bytes
+b'f'
 
 # Hex
 0x12d3ef2e87f72f7d23e6de6f
@@ -50,8 +60,9 @@ enums Fruits{
     Mango,
     Apple,
 }
+```
 
-
+```py
 # Seq Types
 # List
 [1, 2, True, "Room"]
@@ -83,8 +94,9 @@ const MAX_SCORE: int = 100
 const{
     NAKAMA = "Corazon"; YEARS: [int | float] = 2
 }
+```
 
-
+```py
 # Interfaces
 interface Address{address: hex}
 interface Account{
@@ -102,8 +114,9 @@ my_account = Account{
     public_key: 0o123234342342342342334327
 }
 print(my_account.public_key)
+```
 
-
+```py
 # Control flow
 ## Conditional Statements
 if x >= 32{
@@ -136,8 +149,9 @@ for i, x in [0, 10, 20, 30]{
 while True {
     break
 }
+```
 
-
+```py
 # Functions Definition
 def main(){ # returns None by default
     print("")

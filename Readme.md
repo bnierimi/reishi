@@ -67,17 +67,42 @@ enums Fruits{
 # List
 [1, 2, True, "Room"]
 basket: string[] = ["Berry", "Mango", "Apple"]
-basket: <string | boolean>[3] = ["Berries", True, "Onions"]
+basket: <string | boolean>[3]{string boolean string} = ["Berries", True, "Onions"]
 
 * # # Tuple
 # ()
 
 # Array: Matrix
 # # length, dimension|shape
-matrix: int[5, 1] = [[1, 2, 3, 4, 0]]
+array_one: int[5, 1] = [[1, 2, 3, 4, 0]]
 dim = [[1, 2, 3, 4, 0],
        [5, 6, 7, 8, 9]] # shape == int[5, 2]
 
+# i guess 3D
+[[[1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]],
+ [[0, 9, 8],
+  [7, 6, 5],
+  [4, 3, 2]],
+ [[0, 2, 4],
+  [6, 8, 9],
+  [7, 5, 3]]]
+
+array_one.shape()
+# .reverse()
+```
+
+```py
+# Type Convertion
+matrix = Matrix(array_one)
+matrix.transpose()
+
+# # Using the as function
+as(matrix, array_one).transpose()
+```
+
+```py
 # Dictionary
 dictionary = {
     0: "Yeagerist",

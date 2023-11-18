@@ -1,0 +1,51 @@
+`#3 Contracts: Creating contracts
+_by: t/bnierimi_
+`
+
+interface Party{
+    name: string,
+    id: hex,
+}
+
+interface Item{
+    id: hex,
+    name: string,
+    quatity: int,
+    unitPrice: float,
+}
+
+interface Contract {
+    seller: Party
+    buyer: Party
+    offer: {
+        by: Party,
+        items: Item[],
+        amount: float
+    }
+    acceptance: {
+        by: Party,
+        timestamp: string
+    }
+    consideration: {
+        amount: float,
+        method: string
+    }
+    capacity: {
+        sellerCapacity: bool,
+        buyerCapacity: bool,
+    }
+    purpose: {
+        buyerPurpose: string,
+        sellerApproval: bool
+    }
+    mutuality: bool
+    certainty: bool
+    type: "written" | "oral"
+    terms: list
+}
+
+class SalesContract(Contract) {
+    def __init__(self, seller: Party, buyer: Party):
+        self.seller = seller
+        self.buyer = buyer
+}

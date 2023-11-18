@@ -6,7 +6,7 @@
 - License: ...
 
 
-### Sample code
+### Some code
 ```py
 # Types
 integer, float, bytes
@@ -16,15 +16,14 @@ integer, float, bytes
 ```
 
 ```py
-# # Multi line | Docstring
+# Multi line | Docstring
+```
+```js
 `this
 is for
-docstring`
-"""
-if backtick ` not in 256 ASCII characters
-    then this
-"""
+docstring and it permits Note format`
 ```
+[bnierimi/note-up](https://github.com/bnierimi/note-up)
 
 ```py
 # Chars
@@ -74,26 +73,26 @@ basket: <string | boolean>[3]{string boolean string} = ["Berries", True, "Onions
 
 # Array: Matrix
 # Shape: Type, Dimension
-one_array: array(int)[1] = ([1, 2, 3, 4, 5])
-one_array_b: array(int)[1, 5] = ([0, 9, 8, 7, 6])
+one_array: int[1][1] = ([1])
+one_array_b: int[1][5] = ([0, 9, 8, 7, 6])
   # not necessary to include the Row, cause a 1D array only has 1 Row
   # but if we want to
 # Shape [Column Row]
-one_array_c: array(int)[1, 5, 1] = ([0, 9, 8, 7, 6])
+one_array_c: int[1][5, 1] = ([0, 9, 8, 7, 6])
 
 # Shape [Column Row]
-two_array: array(int)[2, 2, 2] = ([1, 2],
-                             [3, 4])
+two_array: int[2][2, 2] = ([1, 2],
+                           [3, 4])
 two_array.transpose()
 two_array.reverse()
 
 # Shape [Column Row]
-three_array: array(int)[3, 2, 3] = ([[1, 2, 3],
-                                [4, 5, 6]],
-                               [[4, 5, 6],
-                                [7, 8, 9]],
-                               [[7, 8, 9],
-                                [0, 1, 2]])
+three_array: int[3][2, 3] = ([[1, 2, 3],
+                              [4, 5, 6]],
+                             [[4, 5, 6],
+                              [7, 8, 9]],
+                             [[7, 8, 9],
+                              [0, 1, 2]])
 three_array.shape() # (2 3)
 three_array.ndim()  # 3
 
@@ -230,53 +229,9 @@ from "https://github.com/bnierimi/reiatsu" import pressure as ps
 # fetch pressure from "https://github.com/bnierimi/reiatsu" as reiatsu
 ```
 
-```py
-# Contracts: Creating contracts
-interface Party{
-    name: string,
-    id: hex,
-}
 
-interface Item{
-    id: hex,
-    name: string,
-    quatity: int,
-    unitPrice: float,
-}
+### Sample codes
+- Contracts
+- Fibonacci
 
-interface Contract {
-    seller: Party
-    buyer: Party
-    offer: {
-        by: Party,
-        items: Item[],
-        amount: float
-    }
-    acceptance: {
-        by: Party,
-        timestamp: string
-    }
-    consideration: {
-        amount: float,
-        method: string
-    }
-    capacity: {
-        sellerCapacity: bool,
-        buyerCapacity: bool,
-    }
-    purpose: {
-        buyerPurpose: string,
-        sellerApproval: bool
-    }
-    mutuality: bool
-    certainty: bool
-    type: "written" | "oral"
-    terms: list
-}
-
-class SalesContract(Contract) {
-    def __init__(self, seller: Party, buyer: Party):
-        self.seller = seller
-        self.buyer = buyer
-}
-```
+Check the `/samples` for more

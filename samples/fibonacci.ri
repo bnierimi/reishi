@@ -1,0 +1,18 @@
+`#3 Fibonacci sequence
+_by: t/bnierimi_
+`
+
+n = 10
+number_one = 0
+number_two = 1
+next_number = number_two
+count = 1
+
+while count <= n {
+    print(next_number, end=" ")
+    count += 1
+    number_one, number_two = number_two, next_number
+    next_number = number_one + number_two
+}
+
+print()

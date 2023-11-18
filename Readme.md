@@ -73,24 +73,22 @@ basket: <string | boolean>[3]{string boolean string} = ["Berries", True, "Onions
 # ()
 
 # Array: Matrix
-# # length, dimension|shape
-array_one: int[5, 1] = [[1, 2, 3, 4, 0]]
-dim = [[1, 2, 3, 4, 0],
-       [5, 6, 7, 8, 9]] # shape == int[5, 2]
+# Shape default[1 Row]
+angle: array[1] = (1, 2, 3, 4, 5)
 
-# i guess 3D
-[[[1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]],
- [[0, 9, 8],
-  [7, 6, 5],
-  [4, 3, 2]],
- [[0, 2, 4],
-  [6, 8, 9],
-  [7, 5, 3]]]
+# Shape [Row Colomn]
+angle: array[2][2, 2] = ([1, 2],
+                         [3, 4])
 
-array_one.shape()
-# .reverse()
+# Shape [Row Colomn]
+angle: array[3][3, 2] = ([[1, 2, 3],
+                          [4, 5, 6]],
+                         [[4, 5, 6],
+                          [7, 8, 9]],
+                         [[7, 8, 9],
+                          [0, 1, 2]])
+                            
+my_array.transpose()
 ```
 
 ```py
@@ -218,4 +216,55 @@ import "bnierimi/reiatsu" as reiatsu
 from math import factorial as fact
 from "https://github.com/bnierimi/reiatsu" import pressure as ps
 # fetch pressure from "https://github.com/bnierimi/reiatsu" as reiatsu
+```
+
+```py
+# Contracts: Creating contracts
+interface Party{
+    name: string,
+    id: hex,
+}
+
+interface Item{
+    id: hex,
+    name: string,
+    quatity: int,
+    unitPrice: float,
+}
+
+interface Contract {
+    seller: Party
+    buyer: Party
+    offer: {
+        by: Party,
+        items: Item[],
+        amount: float
+    }
+    acceptance: {
+        by: Party,
+        timestamp: string
+    }
+    consideration: {
+        amount: float,
+        method: string
+    }
+    capacity: {
+        sellerCapacity: bool,
+        buyerCapacity: bool,
+    }
+    purpose: {
+        buyerPurpose: string,
+        sellerApproval: bool
+    }
+    mutuality: bool
+    certainty: bool
+    type: "written" | "oral"
+    terms: list
+}
+
+class SalesContract(Contract) {
+    def __init__(self, seller: Party, buyer: Party):
+        self.seller = seller
+        self.buyer = buyer
+}
 ```

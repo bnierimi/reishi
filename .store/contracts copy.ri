@@ -41,14 +41,15 @@ interface Contract {
 }
 
 contract OpenSourceStruct {
-    def __init__(self) {
+    require {
         self.seller: Party = Party{
             name: "tsurgeon",
             address: 0x308d3ef2e87f72f7d23e6de6
         };
+        self.buyer: Party;
         self.terms: list = [
             self.buyer.name == "peedee" || self.buyer.name "mko",
-        ] if len(terms) == 0;
+        ];
     }
 
     props {
@@ -56,9 +57,10 @@ contract OpenSourceStruct {
         self.timestamp: string
     }
 
+    __init__ {}
 
     def approve(self) {
-        require(self.terms)
+        
     }
 }
 

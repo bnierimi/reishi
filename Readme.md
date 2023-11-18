@@ -3,8 +3,13 @@
 
 - Website: ...
 - Release: ...
-- License: ...
+- License: TS License
 
+## Get excited
+
+### Installation
+- Visit our site
+- ...
 
 ### Some code
 ```py
@@ -136,8 +141,8 @@ const{
 # Interfaces
 interface Address{address: hex}
 interface Account{
-    name: string
-    wallet_address: Address
+    name: string;
+    wallet_address: Address;
     public_key: oct
 }
 * interface Point{
@@ -145,8 +150,8 @@ interface Account{
 }
 
 my_account = Account{
-    name: "Akagami"
-    wallet_address: Address{0x308d3ef2e87f72f7d23e6de6}
+    name: "Akagami";
+    wallet_address: Address{0x308d3ef2e87f72f7d23e6de6};
     public_key: 0o123234342342342342334327
 }
 print(my_account.public_key)

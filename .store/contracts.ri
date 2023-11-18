@@ -4,7 +4,7 @@ _by: t/bnierimi_
 
 interface Party{
     name: string,
-    address: hex,
+    id: hex,
 }
 
 interface Item{
@@ -15,6 +15,8 @@ interface Item{
 }
 
 interface Contract {
+    seller: Party
+    buyer: Party
     offer: {
         by: Party,
         items: Item[],
@@ -38,29 +40,20 @@ interface Contract {
     }
     mutuality: bool
     certainty: bool
+    type: "written" | "oral"
+    terms: list
+}
+
+class SalesContract(Contract) {
+    def __init__(self, seller: Party, buyer: Party) {
+        self.seller = seller
+        self.buyer = buyer
+    }
 }
 
 contract OpenSourceStruct {
-    def __init__(self) {
-        self.seller: Party = Party{
-            name: "tsurgeon",
-            address: 0x308d3ef2e87f72f7d23e6de6
-        };
-        self.terms: list = [
-            self.buyer.name == "peedee" || self.buyer.name "mko",
-        ] if len(terms) == 0;
+    require{
+        
     }
-
-    props {
-        self.signature: hex
-        self.timestamp: string
-    }
-
-
-    def approve(self) {
-        require(self.terms)
-    }
+    def __init__(self) {}
 }
-
-c = OpenSourceStruct()
-c.terms

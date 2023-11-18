@@ -73,22 +73,34 @@ basket: <string | boolean>[3]{string boolean string} = ["Berries", True, "Onions
 # ()
 
 # Array: Matrix
-# Shape default[1 Row]
-angle: array[1] = (1, 2, 3, 4, 5)
+# Shape: Type, Dimension
+one_array: array(int)[1] = ([1, 2, 3, 4, 5])
+one_array_b: array(int)[1, 5] = ([0, 9, 8, 7, 6])
+  # not necessary to include the Row, cause a 1D array only has 1 Row
+  # but if we want to
+# Shape [Column Row]
+one_array_c: array(int)[1, 5, 1] = ([0, 9, 8, 7, 6])
 
-# Shape [Row Colomn]
-angle: array[2][2, 2] = ([1, 2],
-                         [3, 4])
+# Shape [Column Row]
+two_array: array(int)[2, 2, 2] = ([1, 2],
+                             [3, 4])
+two_array.transpose()
+two_array.reverse()
 
-# Shape [Row Colomn]
-angle: array[3][3, 2] = ([[1, 2, 3],
-                          [4, 5, 6]],
-                         [[4, 5, 6],
-                          [7, 8, 9]],
-                         [[7, 8, 9],
-                          [0, 1, 2]])
-                            
-my_array.transpose()
+# Shape [Column Row]
+three_array: array(int)[3, 2, 3] = ([[1, 2, 3],
+                                [4, 5, 6]],
+                               [[4, 5, 6],
+                                [7, 8, 9]],
+                               [[7, 8, 9],
+                                [0, 1, 2]])
+three_array.shape() # (2 3)
+three_array.ndim()  # 3
+
+# four_array = array([1, []], fill_with=0) # create an array with Zeros
+
+my_list = ["Luffy", "Law", "Kid"]
+four_array = array(my_list) # returns (["Luffy", "Law", "Kid"])
 ```
 
 ```py
